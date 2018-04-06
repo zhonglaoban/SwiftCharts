@@ -1,0 +1,16 @@
+PODS:
+  - SwiftCharts (0.1.0)
+
+DEPENDENCIES:
+  - SwiftCharts (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftCharts:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwiftCharts: 6c52c3f53caeeed58c61964230551d90db565eca
+
+PODFILE CHECKSUM: b51c9230e4a471de1c558ebdc5d3d10c71319ae9
+
+COCOAPODS: 1.3.1

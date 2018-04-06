@@ -1,0 +1,6 @@
+framework module Pods_SwiftCharts_Tests {
+  umbrella header "Pods-SwiftCharts_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

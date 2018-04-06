@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SwiftCharts_Example' do
+  pod 'SwiftCharts', :path => '../'
+
+  target 'SwiftCharts_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
