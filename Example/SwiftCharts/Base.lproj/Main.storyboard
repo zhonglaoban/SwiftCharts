@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,21 +23,52 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzj-5f-CIc" customClass="PieView" customModule="SwiftCharts">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <rect key="frame" x="0.0" y="183.5" width="375" height="300"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="VvG-Hw-Tj4"/>
-                                    <constraint firstAttribute="width" constant="300" id="e34-7n-tAa"/>
+                                    <constraint firstAttribute="height" constant="300" id="R6a-VS-Cjx"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NK-R2-5PH">
+                                <rect key="frame" x="52" y="60" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btn1Click:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nOR-Cs-Xhg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5S-ZL-VId">
+                                <rect key="frame" x="164.5" y="60" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btn2Click:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="due-zY-Eea"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-rf-kRk">
+                                <rect key="frame" x="277" y="60" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btn3Click:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UQw-F4-XWB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Zzj-5f-CIc" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="1d2-PR-wcT"/>
+                            <constraint firstAttribute="trailing" secondItem="Zzj-5f-CIc" secondAttribute="trailing" id="52b-zg-eTJ"/>
                             <constraint firstItem="Zzj-5f-CIc" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="54h-h6-Z35"/>
+                            <constraint firstItem="Zzj-5f-CIc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="J5Q-md-c2m"/>
+                            <constraint firstItem="n5S-ZL-VId" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="NDG-ze-dpX"/>
+                            <constraint firstItem="1NK-R2-5PH" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" multiplier="0.4" id="P2U-BE-HBE"/>
+                            <constraint firstItem="jiM-rf-kRk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="Z3l-jZ-3dA"/>
+                            <constraint firstItem="n5S-ZL-VId" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="axd-Dy-s8W"/>
+                            <constraint firstItem="jiM-rf-kRk" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" multiplier="1.6" id="q4C-bD-6XY"/>
+                            <constraint firstItem="1NK-R2-5PH" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="tf6-yR-Vxf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn1" destination="1NK-R2-5PH" id="3pP-ll-ZTU"/>
+                        <outlet property="btn2" destination="n5S-ZL-VId" id="4r9-rA-Nfb"/>
+                        <outlet property="btn3" destination="jiM-rf-kRk" id="R9q-wq-rI6"/>
                         <outlet property="pieView" destination="Zzj-5f-CIc" id="635-gi-P5y"/>
                     </connections>
                 </viewController>

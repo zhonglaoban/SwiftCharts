@@ -9,29 +9,21 @@
 import UIKit
 
 public class PieView: UIView {
+    let legendHeight:CGFloat = 22
+    var shapeWidth:CGFloat = 10
     var lastEndAg:CGFloat = 0.0
     var lineWidth:CGFloat = 40
+    var totalValue:Float = 0
+    var width:CGFloat = 0
+    var height:CGFloat = 0
+    var radius:CGFloat = 0
+    var arcCenter:CGPoint = .zero
     lazy var tapPaths:[UIBezierPath] = [UIBezierPath]()
     lazy var linePaths:[UIBezierPath] = [UIBezierPath]()
     lazy var sublayers:[CAShapeLayer] = [CAShapeLayer]()
     lazy var centerLabel:CATextLayer = CATextLayer()
     var centerPath:UIBezierPath?
-    // 动画 1
-    lazy var basic0: CABasicAnimation = {
-        let animation = CABasicAnimation(keyPath: "path")
-        let width = bounds.size.width
-        let height = bounds.size.height
-        let radius = height * 0.2
-        let arcWidth = height * 0.2
-        
-        let arcCenter = CGPoint(x: width * 0.5, y: height * 0.5)
-        let fromPath = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: 1, endAngle: 1, clockwise: true)
-        let toPath = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: 1, endAngle: CGFloat.pi, clockwise: true)
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = 1
-        return animation
-    }()
+    
     // 动画 1
     lazy var strokeEnd: CABasicAnimation = {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
@@ -40,25 +32,6 @@ public class PieView: UIView {
         animation.duration = 1
         animation.isRemovedOnCompletion = false
         animation.fillMode = kCAFillModeForwards
-        
-        return animation
-    }()
-    lazy var rotateAnimation:CABasicAnimation = {
-        let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.fromValue = 0
-        rotation.toValue = Double.pi * 2
-        rotation.duration = 4
-        rotation.beginTime = CACurrentMediaTime() + 2
-        return rotation
-    }()
-    // 动画 2
-    lazy var basic2: CAKeyframeAnimation = {
-        let animation = CAKeyframeAnimation(keyPath: "transform.scale")
-        
-        animation.values = [0, 0.2, 0, 0.2, 0]
-        animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-        animation.duration = 1.5
-        animation.isAdditive = true
         
         return animation
     }()
@@ -92,9 +65,15 @@ public class PieView: UIView {
     }
     
     func reset() {
+        shapeWidth = 10
+        width = bounds.size.width
+        height = bounds.size.height
+        radius = height * 0.2
+        arcCenter = CGPoint(x: width * 0.5, y: height * 0.5)
         lastEndAg = 0.0
-        layer.sublayers = nil
+        totalValue = 0
         centerPath = nil
+        layer.sublayers = nil
         sublayers.removeAll()
         tapPaths.removeAll()
         linePaths.removeAll()
@@ -102,10 +81,6 @@ public class PieView: UIView {
     }
     public func showEmptyAnimation() {
         reset()
-        let width = bounds.size.width
-        let height = bounds.size.height
-        let arcCenter = CGPoint(x: width * 0.5, y: height * 0.5)
-        let radius = height * 0.2
         
         let path = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
         let arc = CAShapeLayer()
@@ -145,24 +120,9 @@ public class PieView: UIView {
             }
         }
     }
-    public func drawSectors(_ dicts:[(name:String, percent:Float, color:UIColor)]){
-        reset()
-        let width = bounds.size.width
-        let height = bounds.size.height
-        let arcCenter = CGPoint(x: width * 0.5, y: height * 0.5)
-        
-        for (i,dict) in dicts.enumerated() {
-            let color = dict.color
-            let percent = dict.percent
-            let angle = CGFloat(percent) * CGFloat.pi * 2
-            let name = dict.name
-            
-            drawLegend(name, color, i)
-            drawSector(name, lastEndAg, lastEndAg + angle, color, percent)
-        }
-        
+    func drawCenter() {
         // 中间总数
-        centerPath = UIBezierPath(arcCenter: arcCenter, radius: height * 0.2, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+        centerPath = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
         let circle = CAShapeLayer()
         circle.path = centerPath?.cgPath
         circle.fillColor = UIColor.white.cgColor
@@ -177,24 +137,73 @@ public class PieView: UIView {
         circle.addSublayer(centerLabel)
         layer.addSublayer(circle)
     }
-    func drawLegend(_ name:String, _ color:UIColor, _ index:Int){
+    public func drawIconPie(_ dicts:[(icon: UIImage?, name:String, value:Float, color:UIColor)]){
+        reset()
+        shapeWidth = 22
+        for dict in dicts {
+            totalValue += dict.value
+        }
+        for (i,dict) in dicts.enumerated() {
+            let color = dict.color
+            let percent = dict.value / totalValue
+            let angle = CGFloat(percent) * CGFloat.pi * 2
+            let name = dict.name
+            let sectorName = String(format: "%.f%%", percent * 100)
+            let icon = dict.icon
+            drawLegend(icon, name, color, i)
+            drawSector(sectorName, lastEndAg, lastEndAg + angle, color, percent)
+        }
+        drawCenter()
+    }
+    public func drawPurePie(_ dicts:[(name:String, value:Float, color:UIColor)]){
+        reset()
+        for dict in dicts {
+            totalValue += dict.value
+        }
+        
+        for (i,dict) in dicts.enumerated() {
+            let color = dict.color
+            let percent = dict.value / totalValue
+            let angle = CGFloat(percent) * CGFloat.pi * 2
+            let name = dict.name
+            let sectorName = String(format: "%.f%%", percent * 100)
+            drawLegend(name, color, i)
+            drawSector(sectorName, lastEndAg, lastEndAg + angle, color, percent)
+        }
+        drawCenter()
+    }
+    func drawLegendLabel(_ name:String,  _ index:Int) {
         let fontSize:CGFloat = 18
         let legend = CATextLayer()
         let legendWidth = CGFloat(name.count) * fontSize
-        let legendHeight:CGFloat = 22
-        let shapeWidth:CGFloat = 10
-        let shapePosition = CGPoint(x: 8, y: 8 + legendHeight * CGFloat(index) + (legendHeight - shapeWidth)  * 0.5)
         let legendPosition = CGPoint(x: 12 + shapeWidth, y: 8 + legendHeight * CGFloat(index))
         let legendFrame = CGRect(origin: legendPosition, size: CGSize(width: legendWidth, height: legendHeight))
-        let shapeFrame = CGRect(origin: shapePosition, size: CGSize(width: 40, height: legendHeight))
         
         legend.frame = legendFrame
         legend.string = name
         legend.fontSize = fontSize
-        legend.foregroundColor = UIColor.darkGray.cgColor
-//        legend.backgroundColor = color.cgColor
-        legend.contentsScale = UIScreen.main.scale
         
+        legend.foregroundColor = UIColor.darkGray.cgColor
+        legend.contentsScale = UIScreen.main.scale
+        layer.addSublayer(legend)
+    }
+    func drawLegend(_ icon: UIImage?, _ name:String, _ color:UIColor, _ index:Int){
+        drawLegendLabel(name, index)
+        let shapePosition = CGPoint(x: 8, y: 8 + legendHeight * CGFloat(index) + (legendHeight - shapeWidth)  * 0.5)
+        let shapeFrame = CGRect(origin: shapePosition, size: CGSize(width: shapeWidth, height: shapeWidth))
+        
+        // 图标
+        let shape = CALayer()
+        shape.contents = icon?.setTintColor(color)?.cgImage
+        shape.frame = shapeFrame
+        layer.addSublayer(shape)
+    }
+    func drawLegend(_ name:String, _ color:UIColor, _ index:Int){
+        drawLegendLabel(name, index)
+        let shapePosition = CGPoint(x: 8, y: 8 + legendHeight * CGFloat(index) + (legendHeight - shapeWidth)  * 0.5)
+        let shapeFrame = CGRect(origin: shapePosition, size: CGSize(width: shapeWidth, height: shapeWidth))
+        
+        // 圆点
         let shape = CAShapeLayer()
         let rectPath = UIBezierPath(ovalIn: CGRect(origin: .zero, size: CGSize(width: shapeWidth, height: shapeWidth)))
         shape.frame = shapeFrame
@@ -202,15 +211,10 @@ public class PieView: UIView {
         shape.strokeColor = UIColor.clear.cgColor //UIColor.clear.cgColor
         shape.fillColor = color.cgColor
         layer.addSublayer(shape)
-        layer.addSublayer(legend)
     }
     ///这里为什么没有设置beginTime设置时差，因为只有最后一个有动画
     fileprivate func drawSector(_ name:String, _ startAg: CGFloat, _ endAg: CGFloat, _ color: UIColor, _ percent: Float) {
         lastEndAg = endAg
-        let width = bounds.size.width
-        let height = bounds.size.height
-        let radius = height * 0.2
-        let arcCenter = CGPoint(x: width * 0.5, y: height * 0.5)
         
         //点击后位移的路径
         let linePath = UIBezierPath()
@@ -236,5 +240,17 @@ public class PieView: UIView {
         arc.add(strokeEnd, forKey: "strokeEnd")
         sublayers.append(arc)
         layer.insertSublayer(arc, at: 0)
+    }
+}
+extension UIImage {
+    func setTintColor(_ color: UIColor) -> UIImage? {
+        UIGraphicsBeginImageContext(size)
+        color.setFill()
+        let rect = CGRect(origin: .zero, size: size)
+        UIRectFill(rect)
+        self.draw(in: rect, blendMode: .destinationIn, alpha: 1)
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage
     }
 }

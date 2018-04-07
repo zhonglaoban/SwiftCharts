@@ -1,4 +1,5 @@
 # SwiftCharts
+一个饼状图，以后可能添加一系列图表
 <div>
 <img src="https://github.com/zhonglaoban/SwiftCharts/blob/master/Screenshots/1.gif" width="375px" alt="效果动画"/>
 <img src="https://github.com/zhonglaoban/SwiftCharts/blob/master/Screenshots/2.png" width="375px" alt="效果截图1"/>
@@ -13,16 +14,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-SwiftCharts is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+拷贝到本地，或者制作私有库
+
 
 ```ruby
-pod 'SwiftCharts'
+pod 'SwiftCharts', :path => './'
 ```
 
 ## Author
 
-zhonglaoban
+zhonglaoban，2723916982@qq.com
 
 ## License
 
