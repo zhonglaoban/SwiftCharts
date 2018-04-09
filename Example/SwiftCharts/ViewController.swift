@@ -10,13 +10,13 @@ import UIKit
 import SwiftCharts
 
 class ViewController: UIViewController {
-    let dicts:[(String, Float, UIColor)] = [
+    let dicts:[(String?, Float, UIColor)] = [
         ("11111", 0.1, UIColor.red),
         ("2", 0.2, UIColor.blue),
         ("3", 0.3, UIColor.yellow),
         ("4444456644", 0.4, UIColor.orange)
     ]
-    let iconDicts:[(UIImage?, String, Float, UIColor)] = [
+    let iconDicts:[(UIImage?, String?, Float, UIColor)] = [
         (UIImage(named:"moren"), "11111", 0.1, UIColor.red),
         (UIImage(named:"others"), "2", 0.2, UIColor.blue),
         (UIImage(named:"moren"), "3", 0.3, UIColor.yellow),
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     func initUI(){
         btn1.setTitle("占位动画", for: .normal)
-        btn2.setTitle("点图例", for: .normal)
+        btn2.setTitle("圆点图例", for: .normal)
         btn3.setTitle("图标图例", for: .normal)
     }
     override func viewDidLoad() {
