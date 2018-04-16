@@ -123,6 +123,7 @@ public class PieView: UIView {
                 centerLabel.string = subLayer.name
                 print(subLayer)
             }else {
+                centerLabel.string = "100%"
                 subLayer.removeAllAnimations()
             }
         }
@@ -192,9 +193,9 @@ public class PieView: UIView {
         centerLabel.fontSize = 20
         centerLabel.alignmentMode = kCAAlignmentCenter
         centerLabel.foregroundColor = UIColor.darkGray.cgColor
-        centerLabel.string = "---"
+        centerLabel.string = "100%"
         circle.addSublayer(centerLabel)
-//        layer.addSublayer(circle)
+        layer.addSublayer(circle)
     }
     func drawLegendLabel(_ name:String?,  _ index:Int) {
         let fontSize:CGFloat = 18
