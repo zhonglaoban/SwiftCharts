@@ -9,7 +9,7 @@
 import UIKit
 
 public class PieView: UIView {
-    let legendHeight:CGFloat = 22
+    let legendHeight:CGFloat = 30
     var shapeWidth:CGFloat = 10
     ///记录上一个扇形的结束角度
     var lastEndAg:CGFloat = 0.0
@@ -114,7 +114,7 @@ public class PieView: UIView {
         let point = touches.first?.location(in: self)
         for (i, subLayer) in sublayers.enumerated() {
             let tapPath = tapPaths[i]
-            if point != nil && tapPath.contains(point!) && !centerPath!.contains(point!) {
+            if point != nil && centerPath != nil && tapPath.contains(point!) && !centerPath!.contains(point!) {
                 sectorPositionAnimation.path = linePaths[i].cgPath
                 subLayer.add(sectorWidthAnimation, forKey: "sectorWidthAnimation")
                 subLayer.add(sectorPositionAnimation, forKey: "sectorPositionAnimation")
@@ -157,7 +157,7 @@ public class PieView: UIView {
             drawLegend(icon, name, color, i)
             drawSector(sectorName, lastEndAg, lastEndAg + angle, color, percent)
         }
-        drawCenter()
+//        drawCenter()
     }
     ///根据（名称，值，颜色）画饼图
     public func drawPurePie(_ dicts:[(name:String?, value:Float, color:UIColor)]){
@@ -175,7 +175,7 @@ public class PieView: UIView {
             drawLegend(name, color, i)
             drawSector(sectorName, lastEndAg, lastEndAg + angle, color, percent)
         }
-        drawCenter()
+//        drawCenter()
     }
     /// 中间图层
     func drawCenter() {
@@ -196,10 +196,11 @@ public class PieView: UIView {
     }
     func drawLegendLabel(_ name:String?,  _ index:Int) {
         let fontSize:CGFloat = 18
+        let labelHeight:CGFloat = 22
         let legend = CATextLayer()
         let legendWidth = CGFloat(name?.count ?? 0) * fontSize
-        let legendPosition = CGPoint(x: 12 + shapeWidth, y: 8 + legendHeight * CGFloat(index))
-        let legendFrame = CGRect(origin: legendPosition, size: CGSize(width: legendWidth, height: legendHeight))
+        let legendPosition = CGPoint(x: 12 + shapeWidth, y: 8 + legendHeight * CGFloat(index) + (legendHeight - labelHeight)  * 0.5)
+        let legendFrame = CGRect(origin: legendPosition, size: CGSize(width: legendWidth, height: labelHeight))
         
         legend.frame = legendFrame
         legend.string = name
