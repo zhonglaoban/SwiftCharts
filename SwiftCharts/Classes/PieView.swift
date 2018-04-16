@@ -84,10 +84,8 @@ public class PieView: UIView {
         return position
     }()
     ///扇形宽度动画
-    lazy var sectorWidthAnimation:CAAnimation = {
+    lazy var sectorWidthAnimation:CABasicAnimation = {
         let sector = CABasicAnimation(keyPath: "lineWidth")
-        sector.fromValue = lineWidth
-        sector.toValue = lineWidth * 1.2
         sector.duration = 0.1
         sector.isRemovedOnCompletion = false
         sector.fillMode = kCAFillModeForwards
@@ -115,9 +113,11 @@ public class PieView: UIView {
         for (i, subLayer) in sublayers.enumerated() {
             let tapPath = tapPaths[i]
             if point != nil && centerPath != nil && tapPath.contains(point!) && !centerPath!.contains(point!) {
-                sectorPositionAnimation.path = linePaths[i].cgPath
+                sectorWidthAnimation.fromValue = lineWidth
+                sectorWidthAnimation.toValue = lineWidth * 1.2
                 subLayer.add(sectorWidthAnimation, forKey: "sectorWidthAnimation")
                 if sublayers.count > 1 {
+                    sectorPositionAnimation.path = linePaths[i].cgPath
                     subLayer.add(sectorPositionAnimation, forKey: "sectorPositionAnimation")
                 }
                 centerLabel.string = subLayer.name
