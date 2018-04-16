@@ -117,7 +117,9 @@ public class PieView: UIView {
             if point != nil && centerPath != nil && tapPath.contains(point!) && !centerPath!.contains(point!) {
                 sectorPositionAnimation.path = linePaths[i].cgPath
                 subLayer.add(sectorWidthAnimation, forKey: "sectorWidthAnimation")
-                subLayer.add(sectorPositionAnimation, forKey: "sectorPositionAnimation")
+                if sublayers.count > 1 {
+                    subLayer.add(sectorPositionAnimation, forKey: "sectorPositionAnimation")
+                }
                 centerLabel.string = subLayer.name
                 print(subLayer)
             }else {
@@ -157,7 +159,7 @@ public class PieView: UIView {
             drawLegend(icon, name, color, i)
             drawSector(sectorName, lastEndAg, lastEndAg + angle, color, percent)
         }
-//        drawCenter()
+        drawCenter()
     }
     ///根据（名称，值，颜色）画饼图
     public func drawPurePie(_ dicts:[(name:String?, value:Float, color:UIColor)]){
@@ -175,7 +177,7 @@ public class PieView: UIView {
             drawLegend(name, color, i)
             drawSector(sectorName, lastEndAg, lastEndAg + angle, color, percent)
         }
-//        drawCenter()
+        drawCenter()
     }
     /// 中间图层
     func drawCenter() {
@@ -192,7 +194,7 @@ public class PieView: UIView {
         centerLabel.foregroundColor = UIColor.darkGray.cgColor
         centerLabel.string = "---"
         circle.addSublayer(centerLabel)
-        layer.addSublayer(circle)
+//        layer.addSublayer(circle)
     }
     func drawLegendLabel(_ name:String?,  _ index:Int) {
         let fontSize:CGFloat = 18
