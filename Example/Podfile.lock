@@ -1,5 +1,7 @@
 PODS:
-  - SwiftCharts (0.1.0)
+  - SwiftCharts (0.1.0):
+    - SwiftCharts/PieView (= 0.1.0)
+  - SwiftCharts/PieView (0.1.0)
 
 DEPENDENCIES:
   - SwiftCharts (from `../`)
@@ -9,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SwiftCharts: 6c52c3f53caeeed58c61964230551d90db565eca
+  SwiftCharts: d2c7ef3e9cf890ac13fa420921348cb8f3af4e8d
 
 PODFILE CHECKSUM: b51c9230e4a471de1c558ebdc5d3d10c71319ae9
 

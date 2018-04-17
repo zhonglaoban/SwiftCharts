@@ -3,20 +3,25 @@
   "version": "0.1.0",
   "summary": "A short description of SwiftCharts.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/1049056949@qq.com/SwiftCharts",
+  "homepage": "https://github.com/zhonglaoban/SwiftCharts",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "1049056949@qq.com": "1049056949@"
+    "zhonglaoban": "zhonglaoban"
   },
   "source": {
-    "git": "https://github.com/1049056949@qq.com/SwiftCharts.git",
+    "git": "https://github.com/zhonglaoban/SwiftCharts.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "SwiftCharts/Classes/**/*"
+  "subspecs": [
+    {
+      "name": "PieView",
+      "source_files": "SwiftCharts/Classes/**/PieView.swift"
+    }
+  ]
 }

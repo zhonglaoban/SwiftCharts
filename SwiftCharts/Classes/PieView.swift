@@ -123,7 +123,6 @@ public class PieView: UIView {
                 centerLabel.string = subLayer.name
                 print(subLayer)
             }else {
-                centerLabel.string = "100%"
                 subLayer.removeAllAnimations()
             }
         }

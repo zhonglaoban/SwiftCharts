@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0808C755051F0D7141736F4E029E39 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C716545E483187F6C01A0F080E89C9D /* PieView.swift */; };
+		0A0808C755051F0D7141736F4E029E39 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F6D8D7D3626302B6308703B189A63 /* PieView.swift */; };
 		0DE3B46753F36F79A1CFC4189C3B7D9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		1C97BA92A4A1BA66ED87C7119ECB8999 /* Pods-SwiftCharts_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F0502CFDC1B166FB62DD4A440A304 /* Pods-SwiftCharts_Tests-dummy.m */; };
 		2409D3E707A9BCB58596AC39A4EBC94C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		5135DA7B53DE01F77C5A236FF69AAFBA /* Pods-SwiftCharts_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 530B825F929BF40560660179FCFE379D /* Pods-SwiftCharts_Example-dummy.m */; };
-		836AF56BCEAA9BF5348C4F78418366D9 /* SwiftCharts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6360C06607A19DEEF271C2F50EB339 /* SwiftCharts-dummy.m */; };
+		836AF56BCEAA9BF5348C4F78418366D9 /* SwiftCharts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3BBC3131B197ACBD46A12AF2D3AC2 /* SwiftCharts-dummy.m */; };
 		8D75517EBB266AB2ADF4B9D257C67CC2 /* Pods-SwiftCharts_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C064474B8483DF5A160F495E4E419A80 /* Pods-SwiftCharts_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		966C09A617C0FB6FD3F35929AED7097C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A4C2A48C849ACA396DAB559CAB9051A6 /* SwiftCharts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE82C4DAF58493E2180DBD1583229C02 /* SwiftCharts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C2A48C849ACA396DAB559CAB9051A6 /* SwiftCharts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD6A95A71EBB05FB6C7BB872BE21397 /* SwiftCharts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1C13EF1F225131EE621CCE61F0BB604 /* Pods-SwiftCharts_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD79155066E8F788D363666AD96001B8 /* Pods-SwiftCharts_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -32,35 +32,35 @@
 /* Begin PBXFileReference section */
 		04BAAC65D715630943EBECC71A13CC76 /* Pods-SwiftCharts_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftCharts_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0E8E3989E494D51B25037D6EEAE80054 /* Pods_SwiftCharts_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftCharts_Example.framework; path = "Pods-SwiftCharts_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B6360C06607A19DEEF271C2F50EB339 /* SwiftCharts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCharts-dummy.m"; sourceTree = "<group>"; };
 		2BCB7BAD3C5C03ABA4414BB34CD8121D /* Pods-SwiftCharts_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCharts_Tests-resources.sh"; sourceTree = "<group>"; };
+		3D3906C2844DBA7D9FEF4D00843CE293 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E2F06B3A6059EA75DF903D77337BE5A /* Pods-SwiftCharts_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCharts_Example-resources.sh"; sourceTree = "<group>"; };
 		4C6F0502CFDC1B166FB62DD4A440A304 /* Pods-SwiftCharts_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftCharts_Tests-dummy.m"; sourceTree = "<group>"; };
 		530B825F929BF40560660179FCFE379D /* Pods-SwiftCharts_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftCharts_Example-dummy.m"; sourceTree = "<group>"; };
+		5FD6A95A71EBB05FB6C7BB872BE21397 /* SwiftCharts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCharts-umbrella.h"; sourceTree = "<group>"; };
 		61A10BA6B317CAAF31EE4BAAF23CB77D /* Pods-SwiftCharts_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCharts_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6C716545E483187F6C01A0F080E89C9D /* PieView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieView.swift; path = SwiftCharts/Classes/PieView.swift; sourceTree = "<group>"; };
 		86EAF52A970C681FA5D11A39606AA652 /* Pods-SwiftCharts_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftCharts_Example.modulemap"; sourceTree = "<group>"; };
+		8CE15922AE70C463D8B7367ACBA7FB78 /* SwiftCharts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCharts.xcconfig; sourceTree = "<group>"; };
 		8DD8A1157BFF3DBB4C35E082EC45F36B /* Pods-SwiftCharts_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCharts_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9970351DED790BA4B176E8367EEEC17D /* Pods-SwiftCharts_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftCharts_Example-frameworks.sh"; sourceTree = "<group>"; };
 		9BAB425BD4B7FE7F3F9F8E094DEA4EBD /* SwiftCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftCharts.framework; path = SwiftCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2AF7BEC22F41AEBFA800AEA730BD77E /* Pods-SwiftCharts_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCharts_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A93A8E7B97716E9DE4118870A3D24CCB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABFE8DD11977DC762C1752A58C8FFC1D /* SwiftCharts.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCharts.xcconfig; sourceTree = "<group>"; };
 		B5202C2F0B62C8346B902E7E8612699C /* Pods-SwiftCharts_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftCharts_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B7E79A81F6692B856A05E217C4206E05 /* Pods-SwiftCharts_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCharts_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BC2DB4DB3AEF22D77A016E7D9291368B /* Pods_SwiftCharts_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftCharts_Tests.framework; path = "Pods-SwiftCharts_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0608791C42531D38F567CFFA1D8C8F /* SwiftCharts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftCharts.modulemap; sourceTree = "<group>"; };
 		C064474B8483DF5A160F495E4E419A80 /* Pods-SwiftCharts_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCharts_Tests-umbrella.h"; sourceTree = "<group>"; };
-		C1A468D951CD8E06A942DDE1FE5224DA /* SwiftCharts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCharts-prefix.pch"; sourceTree = "<group>"; };
+		C0C3BBC3131B197ACBD46A12AF2D3AC2 /* SwiftCharts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCharts-dummy.m"; sourceTree = "<group>"; };
+		CA6E4AD46AEB57A04004DD331DAEF130 /* SwiftCharts-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCharts-prefix.pch"; sourceTree = "<group>"; };
 		CD79155066E8F788D363666AD96001B8 /* Pods-SwiftCharts_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftCharts_Example-umbrella.h"; sourceTree = "<group>"; };
 		DA78EB996D0AE28FF6335CEEAF399E16 /* Pods-SwiftCharts_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftCharts_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E19F6D8D7D3626302B6308703B189A63 /* PieView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PieView.swift; path = SwiftCharts/Classes/PieView.swift; sourceTree = "<group>"; };
 		E770F047D5886F108124FF1D7C78E46A /* Pods-SwiftCharts_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCharts_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E896DD2E9A80FF8BF648A191A77D6BFC /* Pods-SwiftCharts_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftCharts_Tests.modulemap"; sourceTree = "<group>"; };
 		ED614D5D8CB98191F87061D5E9A05A12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE2D5A32C5656106FB1407FAAE72AD7F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE82C4DAF58493E2180DBD1583229C02 /* SwiftCharts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCharts-umbrella.h"; sourceTree = "<group>"; };
-		F4FA308F4F3E59990E974B76D603BA33 /* SwiftCharts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftCharts.modulemap; sourceTree = "<group>"; };
 		F5C303153ABB925D6C39557DBCE279C3 /* Pods-SwiftCharts_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftCharts_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,20 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3DB8A147FA099793AAB6BC1C61FBD6A5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EE2D5A32C5656106FB1407FAAE72AD7F /* Info.plist */,
-				F4FA308F4F3E59990E974B76D603BA33 /* SwiftCharts.modulemap */,
-				ABFE8DD11977DC762C1752A58C8FFC1D /* SwiftCharts.xcconfig */,
-				1B6360C06607A19DEEF271C2F50EB339 /* SwiftCharts-dummy.m */,
-				C1A468D951CD8E06A942DDE1FE5224DA /* SwiftCharts-prefix.pch */,
-				EE82C4DAF58493E2180DBD1583229C02 /* SwiftCharts-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SwiftCharts";
-			sourceTree = "<group>";
-		};
 		3E2B1AB49EAF1FB6818CBBCA30FDD793 /* Pods-SwiftCharts_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +113,7 @@
 		616AD7FBF3D90CDA98536BD2CB942021 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9A82E0C242D249E42481506FACF9698E /* SwiftCharts */,
+				E124AA914C6756DF49B7502F6A8A7BFF /* SwiftCharts */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -153,14 +139,12 @@
 			);
 			sourceTree = "<group>";
 		};
-		9A82E0C242D249E42481506FACF9698E /* SwiftCharts */ = {
+		A90AFC765F77A898FFAA6765EEDE75C1 /* PieView */ = {
 			isa = PBXGroup;
 			children = (
-				6C716545E483187F6C01A0F080E89C9D /* PieView.swift */,
-				3DB8A147FA099793AAB6BC1C61FBD6A5 /* Support Files */,
+				E19F6D8D7D3626302B6308703B189A63 /* PieView.swift */,
 			);
-			name = SwiftCharts;
-			path = ../..;
+			name = PieView;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -186,6 +170,30 @@
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		E124AA914C6756DF49B7502F6A8A7BFF /* SwiftCharts */ = {
+			isa = PBXGroup;
+			children = (
+				A90AFC765F77A898FFAA6765EEDE75C1 /* PieView */,
+				E58D4A277BC4DE044453EE3252CA56B6 /* Support Files */,
+			);
+			name = SwiftCharts;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E58D4A277BC4DE044453EE3252CA56B6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D3906C2844DBA7D9FEF4D00843CE293 /* Info.plist */,
+				BF0608791C42531D38F567CFFA1D8C8F /* SwiftCharts.modulemap */,
+				8CE15922AE70C463D8B7367ACBA7FB78 /* SwiftCharts.xcconfig */,
+				C0C3BBC3131B197ACBD46A12AF2D3AC2 /* SwiftCharts-dummy.m */,
+				CA6E4AD46AEB57A04004DD331DAEF130 /* SwiftCharts-prefix.pch */,
+				5FD6A95A71EBB05FB6C7BB872BE21397 /* SwiftCharts-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SwiftCharts";
 			sourceTree = "<group>";
 		};
 		EAF16D5534BEAC7A6190C223669FA575 /* Pods-SwiftCharts_Example */ = {
@@ -356,7 +364,7 @@
 /* Begin XCBuildConfiguration section */
 		24BA260B4DEEC66C69FBE6E93FCD6C3D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABFE8DD11977DC762C1752A58C8FFC1D /* SwiftCharts.xcconfig */;
+			baseConfigurationReference = 8CE15922AE70C463D8B7367ACBA7FB78 /* SwiftCharts.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -447,7 +455,7 @@
 		};
 		3915F6C750C29239D4E4CC1A28CFEC10 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABFE8DD11977DC762C1752A58C8FFC1D /* SwiftCharts.xcconfig */;
+			baseConfigurationReference = 8CE15922AE70C463D8B7367ACBA7FB78 /* SwiftCharts.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
