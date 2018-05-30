@@ -37,15 +37,22 @@ public class PieView: UIView {
     var centerPath:UIBezierPath?
     
     /// 画扇形的动画
-    lazy var strokeEnd: CABasicAnimation = {
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = 1
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeForwards
+    lazy var strokeEnd: CAKeyframeAnimation = {
+        let widthAnimation = CAKeyframeAnimation(keyPath: "lineWidth")
+        widthAnimation.duration = 1
+        let toWidth = lineWidth * 1.2
+        widthAnimation.values = [
+            toWidth + 3.83,
+            toWidth - 2.21,
+            toWidth + 1.58,
+            toWidth - 0.96,
+            toWidth + 0.36,
+            toWidth
+        ]
+        widthAnimation.isRemovedOnCompletion = false
+        widthAnimation.fillMode = kCAFillModeForwards
         
-        return animation
+        return widthAnimation
     }()
     /// 加载动画
     lazy var loaddingAnimation: CAAnimationGroup = {
@@ -113,13 +120,7 @@ public class PieView: UIView {
         for (i, subLayer) in sublayers.enumerated() {
             let tapPath = tapPaths[i]
             if point != nil && centerPath != nil && tapPath.contains(point!) && !centerPath!.contains(point!) {
-                sectorWidthAnimation.fromValue = lineWidth
-                sectorWidthAnimation.toValue = lineWidth * 1.2
                 subLayer.add(sectorWidthAnimation, forKey: "sectorWidthAnimation")
-                if sublayers.count > 1 {
-                    sectorPositionAnimation.path = linePaths[i].cgPath
-                    subLayer.add(sectorPositionAnimation, forKey: "sectorPositionAnimation")
-                }
                 centerLabel.string = subLayer.name
                 print(subLayer)
             }else {
