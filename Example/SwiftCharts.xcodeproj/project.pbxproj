@@ -171,7 +171,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				053FD9283E538D10B3C6EA58 /* [CP] Embed Pods Frameworks */,
-				9807723782E619E9FCC7C7B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,8 +189,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				1432EA58C61AB624A13121D3 /* [CP] Embed Pods Frameworks */,
-				1AA6299A23C0E886EA991FB8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,6 +217,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 356ESZ72J9;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -230,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -271,7 +270,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftCharts_Example/Pods-SwiftCharts_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftCharts_Example/Pods-SwiftCharts_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -280,52 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftCharts_Example/Pods-SwiftCharts_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1432EA58C61AB624A13121D3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftCharts_Tests/Pods-SwiftCharts_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1AA6299A23C0E886EA991FB8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftCharts_Tests/Pods-SwiftCharts_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9807723782E619E9FCC7C7B2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftCharts_Example/Pods-SwiftCharts_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftCharts_Example/Pods-SwiftCharts_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BD50B240CC57080F59546404 /* [CP] Check Pods Manifest.lock */ = {
@@ -520,12 +474,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 356ESZ72J9;
 				INFOPLIST_FILE = SwiftCharts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -536,12 +491,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 356ESZ72J9;
 				INFOPLIST_FILE = SwiftCharts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -549,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF7F9CACD23CB875D7776A61 /* Pods-SwiftCharts_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 356ESZ72J9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -558,6 +515,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,11 +528,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D794FA1DE547BCB18E704839 /* Pods-SwiftCharts_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 356ESZ72J9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

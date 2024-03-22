@@ -50,7 +50,7 @@ public class PieView: UIView {
             toWidth
         ]
         widthAnimation.isRemovedOnCompletion = false
-        widthAnimation.fillMode = kCAFillModeForwards
+        widthAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         return widthAnimation
     }()
@@ -77,7 +77,7 @@ public class PieView: UIView {
         let group = CAAnimationGroup()
         group.duration = 4
         group.animations = [rotation, strokeStart, strokeEnd]
-        group.fillMode = kCAFillModeBackwards
+        group.fillMode = CAMediaTimingFillMode.backwards
         group.repeatCount = .greatestFiniteMagnitude
         
         return group
@@ -87,7 +87,7 @@ public class PieView: UIView {
         let position = CAKeyframeAnimation(keyPath: "position")
         position.duration = 0.1
         position.isRemovedOnCompletion = false
-        position.fillMode = kCAFillModeForwards
+        position.fillMode = CAMediaTimingFillMode.forwards
         return position
     }()
     ///扇形宽度动画
@@ -95,7 +95,7 @@ public class PieView: UIView {
         let sector = CABasicAnimation(keyPath: "lineWidth")
         sector.duration = 0.1
         sector.isRemovedOnCompletion = false
-        sector.fillMode = kCAFillModeForwards
+        sector.fillMode = CAMediaTimingFillMode.forwards
         return sector
     }()
     ///重置属性，移除图层等
@@ -191,7 +191,7 @@ public class PieView: UIView {
         centerLabel.position = arcCenter
         centerLabel.contentsScale = UIScreen.main.scale
         centerLabel.fontSize = 20
-        centerLabel.alignmentMode = kCAAlignmentCenter
+        centerLabel.alignmentMode = CATextLayerAlignmentMode.center
         centerLabel.foregroundColor = UIColor.darkGray.cgColor
         centerLabel.string = "100%"
         circle.addSublayer(centerLabel)
